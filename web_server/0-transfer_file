@@ -2,10 +2,14 @@
 # Transfers a file from our client to a server
 #
 # variables
-if [ $# -lt 4 ]
-then
-  echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+if [ $# -lt 4 ]; then
+  echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 else
-  scp -o StrictHostKeyChecking=no -i ./0-transfer_file.sh alu-system_engineering-devops/web_server
-/0-transfer_file 54.209.204.195 ubuntu ~/.ssh/id_rsa
+  FILE_PATH=$1
+  IP=$2
+  USERNAME=$3
+  SSH_KEY=$4
+
+  scp -o StrictHostKeyChecking=no -i "~/.ssh/id_rsa.pub" "alu-system_engineering-devops/web_server/0-transfer_file
+" "ubuntu@54.209.204.195:~/"
 fi
