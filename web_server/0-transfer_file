@@ -9,4 +9,4 @@ if [ "$#" -lt 3 ]; then
 		scp -i "$4" -o StrictHostKeyChecking=no "$1" "$3@$2":~/
 		fi
 # Transfer file using scp to the server's home directory
-scp -i "$ssh_key" -o StrictHostKeyChecking=no "$index.html" "$ubuntu@$54.146.213.118":~/
+scp -i "$ssh_key" -o StrictHostKeyChecking=no "/root/.ssh/id_rsa" "$ubuntu@$54.146.213.118":~/
